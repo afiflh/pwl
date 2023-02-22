@@ -2,8 +2,11 @@
 
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomeController;
-
+use App\Http\Controllers\NewsController;
+use App\Http\Controllers\ProductsController;
+use App\Http\Controllers\ProgramController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -19,7 +22,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [HomeController::class, 'index']);
-
-Route::get('/about', [AboutController::class, 'index']);
-
+Route::get('/about-us', [AboutController::class, 'index']);
 Route::get('/articles/{id}', [ArticleController::class, 'index']);
+Route::get('/jasa/{name}', [ProductsController::class, 'index']);
+Route::get('/berita/{news}', [NewsController::class, 'index']);
+Route::get('/program/{program}', [ProgramController::class, 'index']);
+Route::resource('/contact-us', ContactController::class);
+
+
