@@ -13,7 +13,7 @@ class ContactController extends Controller
      */
     public function index()
     {
-        echo "Terima kasih telah menghubungi kami.";
+        return view('contact-us');
     }
 
     /**
