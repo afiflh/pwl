@@ -34,3 +34,4 @@ Route::resource('/contact-us', ContactController::class);
 Route::get('/dashboard', [DashboardController::class, 'index']);
 Route::get('/profile', [ProfileController::class, 'index']);
 Route::get('/collage', [CollegeController::class, 'index']);
+Route::get('/article', [ArticleController::class, 'index']);

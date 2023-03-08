@@ -3,10 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Article;
 
 class ArticleController extends Controller
 {
-    function index($id){
-        echo "Halaman Artikel dengan ID $id";
+    function index(){
+        return view('article', [
+            'article' => Article::all()
+        ]);
     }
 }
