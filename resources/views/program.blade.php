@@ -56,7 +56,6 @@
   </div>
 
   @endsection
-
   @push('custom_css')
       <style>
         .card{
@@ -64,7 +63,6 @@
             color:aliceblue;
             transition: 0.5s;
         }
-
         .card:hover{
             background: aqua;
             color: blue;
@@ -72,7 +70,6 @@
         }
       </style>
   @endpush
-
   @push('custom_js')
       <script>
         alert('Halaman Program')

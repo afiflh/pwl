@@ -17,6 +17,18 @@ class DatabaseSeeder extends Seeder
         $this->call([
             ArticleSeeder::class
         ]);
+        // $this->call([
+        //     HobiSeeder::class
+        // ]);
+        $this->call([
+            HobiLagiSeeder::class
+        ]);
+        $this->call([
+            KeluargaSeeder::class
+        ]);
+        $this->call([
+            MataKuliahSeeder::class
+        ]);
         // \App\Models\User::factory(10)->create();
 
         // \App\Models\User::factory()->create([

@@ -8,12 +8,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>News Page</h1>
+            <h1>Data Keluarga</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Berita</a></li>
-              <li class="breadcrumb-item active">News Page</li>
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">Data Keluarga</li>
             </ol>
           </div>
         </div>
@@ -26,7 +26,7 @@
       <!-- Default box -->
       <div class="card">
         <div class="card-header">
-          <h3 class="card-title">NEWS!!!</h3>
+          <h3 class="card-title">LIST</h3>
 
           <div class="card-tools">
             <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
@@ -38,9 +38,24 @@
           </div>
         </div>
         <div class="card-body">
-            <h2>Berita Di Balik Layar Pemotretan {{$news}} Yang Santai</h2><br>
-            Pelantikan presiden dan wakil presiden berlangsung 20 Oktober 2019. 
-            Salah satu persiapan Jokowi dan KH Ma'ruf Amin adalah sesi foto pimpinan negara
+          <table class="table table-bordered tabel-hover">
+            <thead class="tabel">
+                <th class="text-center bg-secondary">ID</th>
+                <th class="text-center bg-secondary">Nama</th>
+                <th class="text-center bg-secondary">Jenis Kelamin</th>
+                <th class="text-center bg-secondary">Hubungan Keluarga</th>
+                <th class="text-center bg-secondary">Tanggal Lahir</th>
+            </thead>
+            @foreach ($keluarga as $keluarga)
+            <tr>
+                <td>{{$keluarga->id}}</td>
+                <td>{{$keluarga->nama}}</td>
+                <td>{{$keluarga->jenis_kelamin}}</td> 
+                <td>{{$keluarga->hubungan}}</td>
+                <td>{{$keluarga->tanggal_lahir}}</td>
+             </tr>
+            @endforeach
+          </table>
         </div>
         <!-- /.card-body -->
         <div class="card-footer">
@@ -53,26 +68,30 @@
     </section>
     <!-- /.content -->
   </div>
+
   @endsection
+
   @push('custom_css')
       <style>
-        .card{
+        th{
+            
+        }
+        /* .card{
             background:green;
             color:aliceblue;
             transition: 0.5s;
         }
+
         .card:hover{
             background: aqua;
             color: blue;
             transform:scale(0.9);
-        }
-        .card-title{
-            color: red;
-        }
+        } */
       </style>
   @endpush
+
   @push('custom_js')
-      <script>
-        alert('Halaman News')
-      </script>
+      {{-- <script>
+        alert('Halaman Home')
+      </script> --}}
   @endpush
