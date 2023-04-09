@@ -6,15 +6,18 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\CollegeController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\HobiController;
 use App\Http\Controllers\HobiLagiController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\KeluargaController;
+use App\Http\Controllers\KeluargaLagiController;
 use App\Http\Controllers\MahasiswaController;
 use App\Http\Controllers\MataKuliahController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProgramController;
+use App\Models\KeluargaLagi;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -50,6 +53,8 @@ Route::middleware(['auth'])->group(function(){
     Route::get('/matkul', [MataKuliahController::class, 'index']);
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
     Route::resource('/mahasiswa', MahasiswaController::class);
+    Route::resource('/hobis', HobiController::class);
+    Route::resource('/keluargalagi', KeluargaLagiController::class);
 });
 
 

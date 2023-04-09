@@ -91,6 +91,7 @@
               </p>
             </a>
           </li>
+
           <li class="nav-item">
             <a href="{{ url('/matkul') }}" class="nav-link {{ request()->is('/') ? 'active' : '' }}" class="nav-link" class="nav-link">
               <i class="nav-icon fas fa-copy"></i>
@@ -105,6 +106,26 @@
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Mahasiswa
+              </p>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="{{ url('/hobis') }}" class="nav-link {{ request()->is('/') ? 'active' : '' }}" class="nav-link" class="nav-link">
+              <i class="nav-icon fas fa-tree"></i>
+              <p>
+                HobbyInput
+                {{-- <span class="right badge badge-danger">New</span> --}}
+              </p>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="{{ url('/keluargalagi') }}" class="nav-link {{ request()->is('/') ? 'active' : '' }}" class="nav-link" class="nav-link">
+              <i class="nav-icon fas fa-user"></i>
+              <p>
+                InputKeluarga
+                {{-- <span class="right badge badge-danger">New</span> --}}
               </p>
             </a>
           </li>
