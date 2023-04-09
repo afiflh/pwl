@@ -101,6 +101,7 @@
               </p>
             </a>
           </li>
+
           <li class="nav-item">
             <a href="{{ url('/mahasiswa') }}" class="nav-link {{ request()->is('/') ? 'active' : '' }}" class="nav-link" class="nav-link">
               <i class="nav-icon fas fa-tachometer-alt"></i>
@@ -125,6 +126,16 @@
               <i class="nav-icon fas fa-user"></i>
               <p>
                 InputKeluarga
+                {{-- <span class="right badge badge-danger">New</span> --}}
+              </p>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="{{ url('/matakuliahlagi') }}" class="nav-link {{ request()->is('/') ? 'active' : '' }}" class="nav-link" class="nav-link">
+              <i class="nav-icon fas fa-copy"></i>
+              <p>
+                InputMata_Kuliah
                 {{-- <span class="right badge badge-danger">New</span> --}}
               </p>
             </a>

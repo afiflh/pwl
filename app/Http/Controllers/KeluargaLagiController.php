@@ -71,7 +71,7 @@ class KeluargaLagiController extends Controller
      */
     public function edit($id)
     {
-        $klg = KeluargaLagi::find();
+        $klg = KeluargaLagi::find($id);
         return view('keluarga.create_keluarga')
                     ->with('klg', $klg)
                     ->with('url_form', url('/keluargalagi/'. $id));
@@ -84,7 +84,7 @@ class KeluargaLagiController extends Controller
      * @param  \App\Models\KeluargaLagi  $keluargaLagi
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request,$id)
+    public function update(Request $request, $id)
     {
         $request->validate([
             'nik' => 'required|string|max:20|',
@@ -104,8 +104,10 @@ class KeluargaLagiController extends Controller
      * @param  \App\Models\KeluargaLagi  $keluargaLagi
      * @return \Illuminate\Http\Response
      */
-    public function destroy(KeluargaLagi $keluargaLagi)
+    public function destroy($id)
     {
-        //
+        KeluargaLagi::where('id', '=', $id)->delete();
+        return redirect('keluargalagi')
+                        ->with('success', 'Data Keluarga Berhasil Dihapus');
     }
 }

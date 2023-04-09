@@ -13,6 +13,7 @@ use App\Http\Controllers\KeluargaController;
 use App\Http\Controllers\KeluargaLagiController;
 use App\Http\Controllers\MahasiswaController;
 use App\Http\Controllers\MataKuliahController;
+use App\Http\Controllers\MataKuliahLagiController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\ProfileController;
@@ -55,6 +56,7 @@ Route::middleware(['auth'])->group(function(){
     Route::resource('/mahasiswa', MahasiswaController::class);
     Route::resource('/hobis', HobiController::class);
     Route::resource('/keluargalagi', KeluargaLagiController::class);
+    Route::resource('/matakuliahlagi', MataKuliahLagiController::class);
 });
 
 
