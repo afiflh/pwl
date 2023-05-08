@@ -48,6 +48,8 @@
 
     <a href="{{url('mahasiswa/create')}}" class="btn btn-sm btn-success my-2">Tambah Data</a>
 
+
+    
     <table class="table table-bordered table-striped">
       <thead>
         <tr>
@@ -56,6 +58,7 @@
           <th>Nama</th>
           <th>JK</th>
           <th>HP</th>
+          <th>Kelas</th>
           <th>Action</th>
         </tr>
       </thead>
@@ -63,11 +66,12 @@
         @if($mhs->count() > 0)
           @foreach($mhs as $i => $m)
             <tr>
-              <td>{{++$i}}</td>
-              <td>{{$m->nim}}</td>
-              <td>{{$m->nama}}</td>
-              <td>{{$m->jk}}</td>
-              <td>{{$m->hp}}</td>
+              <td>{{ ++$i }}</td>
+              <td>{{ $m->nim }}</td>
+              <td>{{ $m->nama }}</td>
+              <td>{{ $m->jk }}</td>
+              <td>{{ $m->hp }}</td>
+              <td>@if($m->kelas) {{ $m->kelas->nama_kelas }} @else - @endif</td>
               <td>
                 <!-- Bikin tombol edit dan delete -->
                 <a href="{{ url('/mahasiswa/'. $m->id.'/edit') }}" class="btn btn-sm btn-warning">edit</a>
@@ -76,6 +80,7 @@
                   @csrf
                   @method('DELETE')
                   <button type="submit" class="btn btn-sm btn-danger">hapus</button>
+                <a href="{{ '/mahasiswa/' . $m->id . '/khs' }}" class="btn btn-sm btn-primary">Nilai</a>
                 </form>
               </td>
             </tr>

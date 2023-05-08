@@ -50,6 +50,7 @@
                         <span class="error invalid-feedback">{{ $message }} </span> 
                     @enderror
                 </div>
+
                 <div class="form-group">
                     <label>Nama</label>
                     <input class="form-control @error('nama') is-invalid @enderror" value="{{ isset($mhs)? $mhs->nama : old('nama') }}" name="nama" type="text"/> 
@@ -77,6 +78,7 @@
                         <span class="error invalid-feedback">{{ $message }} </span> 
                     @enderror
                 </div>
+
                 <div class="form-group">
                     <label>Tanggal Lahir</label>
                     <input type="date" class="form-control" name="tanggal_lahir" value="{{ old('tanggal_lahir') }}">
@@ -84,6 +86,7 @@
                         <span class="error invalid-feedback">{{ $message }}</span>
                     @enderror
                 </div>
+                
                 <div class="form-group">
                     <label>Alamat</label>
                     <input class="form-control @error('alamat') is-invalid @enderror" value="{{ isset($mhs)? $mhs->alamat : old('alamat') }}" name="alamat" type="text"/> 
@@ -92,12 +95,20 @@
                     @enderror
                 </div>
                 <div class="form-group">
-                    <label>No. HP</label>
-                    <input class="form-control @error('hp') is-invalid @enderror" value="{{ isset($mhs)? $mhs->hp : old('hp') }}" name="hp" type="text"/> 
-                    @error('hp')
-                        <span class="error invalid-feedback">{{ $message }} </span> 
-                    @enderror
+                    <label for="Kelas">Kelas</label>
+                    <select class="form-control @error('kelas') is-invalid @enderror" value="{{ isset($mhs)? $mhs->kelas : old('kelas') }}" name="kelas">
+                      @foreach ($kelas as $kls)
+                        <option value="{{ $kls->id }}">{{ $kls->nama_kelas }}</option>
+                      @endforeach
+                    </select>
                 </div>
+                <div class="form-group">
+                  <label>No. HP</label>
+                  <input class="form-control @error('hp') is-invalid @enderror" value="{{ isset($mhs)? $mhs->hp : old('hp') }}" name="hp" type="text"/> 
+                  @error('hp')
+                      <span class="error invalid-feedback">{{ $message }} </span> 
+                  @enderror
+              </div>
                 <button class="btn btn-primary" type="submit">Simpan</button>
 
 
