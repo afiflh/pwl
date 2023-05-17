@@ -44,7 +44,8 @@ class ArticleController extends Controller
             'content' => $request->content,
             'featured_image' => $image_name,
         ]);
-        return 'Artikel berhasil disimpan';
+        return redirect('article/create')
+                ->with('success', 'Artikel Telah Ditambahkan');
     }
 
     /**
