@@ -15,9 +15,9 @@ return new class extends Migration
     {
         Schema::create('articles', function (Blueprint $table) {
             $table->id();
-            $table->string('judul', 100);
-            $table->string('penulis', 30);
-            $table->date('tanggal_terbit');
+            $table->string('title');
+            $table->text('content');
+            $table->string('featured_image');
             $table->timestamps();
         });
     }

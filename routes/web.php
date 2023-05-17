@@ -40,7 +40,7 @@ Route::get('logout', [LoginController::class, 'logout']);
 Route::middleware(['auth'])->group(function(){
     Route::get('/', [HomeController::class, 'index']);
     Route::get('/about-us', [AboutController::class, 'index']);
-    Route::get('/articles/{id}', [ArticleController::class, 'index']);
+    Route::resource('/article', ArticleController::class);
     Route::get('/jasa/{name}', [ProductsController::class, 'index']);
     Route::get('/berita/{news}', [NewsController::class, 'index']);
     Route::get('/program/{program}', [ProgramController::class, 'index']);
