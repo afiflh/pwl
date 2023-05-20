@@ -56,6 +56,7 @@
           <th>No</th>
           <th>NIM</th>
           <th>Nama</th>
+          <th>Foto</th>
           <th>JK</th>
           <th>HP</th>
           <th>Kelas</th>
@@ -69,6 +70,7 @@
               <td>{{ ++$i }}</td>
               <td>{{ $m->nim }}</td>
               <td>{{ $m->nama }}</td>
+              <td><img src="{{ asset('storage/'.$m->foto) }}" width="100"></td>
               <td>{{ $m->jk }}</td>
               <td>{{ $m->hp }}</td>
               <td>@if($m->kelas) {{ $m->kelas->nama_kelas }} @else - @endif</td>

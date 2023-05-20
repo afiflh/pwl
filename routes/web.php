@@ -58,7 +58,9 @@ Route::middleware(['auth'])->group(function(){
     Route::resource('/keluargalagi', KeluargaLagiController::class);
     Route::resource('/matakuliahlagi', MataKuliahLagiController::class);
     Route::get('/mahasiswa/{id}/khs', [MahasiswaController::class, 'showKhs']);
+    Route::get('/mahasiswa/{id}/eksporKhs', [MahasiswaController::class, 'eksporKhs'])->name('mahasiswa.eksporKhs');
     Route::get('/articles/cetak_pdf', [ArticleController::class, 'cetak_pdf']);
+
 });
 
 

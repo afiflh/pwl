@@ -14,8 +14,6 @@ class MahasiswaModel extends Model
     protected $guarded = ['id'];
     // protected $primaryKey = 'nim';
 
-    
-
     public function kelas(){
         return $this->belongsTo(Kelas::class);
     }
@@ -23,4 +21,5 @@ class MahasiswaModel extends Model
     public function matakuliah(){
         return $this->belongsToMany(MataKuliah::class, 'mahasiswa_matakuliah', 'mahasiswa_id', 'matakuliah_id')->withPivot('nilai');
     }
+
 }

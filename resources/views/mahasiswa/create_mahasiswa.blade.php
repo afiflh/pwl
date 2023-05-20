@@ -39,7 +39,8 @@
         </div>
 
         <div class="card-body">
-            <form method="POST" action="{{ $url_form }}"> 
+            <form method="POST" action="{{ $url_form }}" id="myForm" enctype="multipart/form-data">
+              @method('PUT') 
                 @csrf
                 {!! (isset($mhs))? method_field('PUT') : '' !!}
                 
@@ -57,6 +58,11 @@
                     @error('nama')
                         <span class="error invalid-feedback">{{ $message }} </span> 
                     @enderror
+                </div>
+
+                <div class="form-group">
+                  <label for="foto">Tambahkan Foto</label>
+                  <input type="file" class="form-control" required="required" name="foto">
                 </div>
 
                 <div class="form-group">
