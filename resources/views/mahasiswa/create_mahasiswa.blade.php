@@ -40,7 +40,9 @@
 
         <div class="card-body">
             <form method="POST" action="{{ $url_form }}" id="myForm" enctype="multipart/form-data">
+              @if(isset($mhs))
               @method('PUT') 
+              @endif 
                 @csrf
                 {!! (isset($mhs))? method_field('PUT') : '' !!}
                 

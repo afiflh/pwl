@@ -60,6 +60,10 @@ Route::middleware(['auth'])->group(function(){
     Route::get('/mahasiswa/{id}/khs', [MahasiswaController::class, 'showKhs']);
     Route::get('/mahasiswa/{id}/eksporKhs', [MahasiswaController::class, 'eksporKhs'])->name('mahasiswa.eksporKhs');
     Route::get('/articles/cetak_pdf', [ArticleController::class, 'cetak_pdf']);
+    Route::post('/mahasiswa/data', [MahasiswaController::class, 'data']);
+    Route::get('/mahasiswa/{id}', [MahasiswaController::class, 'show'])->name('mahasiswa.show');
+
+
 
 });
 
